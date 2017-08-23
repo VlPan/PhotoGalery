@@ -18,18 +18,19 @@ import { NavComponent } from './header/nav/nav.component';
 import { CarouselComponent } from './header/carousel/carousel.component';
 import {Routes, RouterModule} from "@angular/router";
 import {ImagesService} from "./services/images.service";
+import { ImageDescComponent } from './image-desc/image-desc.component';
 
 
 
 const routes : Routes = [
     {path: '', redirectTo: '/images', pathMatch: 'full'},
     {path: 'images', component: ImagesComponent, children: [
-        {path: ':id', component: ImageComponent},
         {path: ':id/edit', component: ImagesEditComponent}
     ]},
     {path: 'desc', component: ImagesDescComponent},
     {path: 'add', component: ImagesAddComponent},
-    {path: 'authors', component: AuthorsComponent}
+    {path: 'authors', component: AuthorsComponent},
+    {path: 'images/:id', component: ImageDescComponent},
 ]
 
 
@@ -44,7 +45,8 @@ const routes : Routes = [
     AuthorsComponent,
     ImagesDescComponent,
     NavComponent,
-    CarouselComponent
+    CarouselComponent,
+    ImageDescComponent
   ],
   imports: [
     BrowserModule,
