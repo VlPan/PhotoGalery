@@ -9,7 +9,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import { AppComponent } from './app.component';
 import { ImagesComponent } from './images/images.component';
 import { HeaderComponent } from './header/header.component';
-import { ImagesListComponent } from './images/images-list/images-list.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImagesAddComponent } from './images/images-add/images-add.component';
 import { ImagesEditComponent } from './images/images-edit/images-edit.component';
@@ -18,6 +17,7 @@ import { ImagesDescComponent } from './images/images-desc/images-desc.component'
 import { NavComponent } from './header/nav/nav.component';
 import { CarouselComponent } from './header/carousel/carousel.component';
 import {Routes, RouterModule} from "@angular/router";
+import {ImagesService} from "./services/images.service";
 
 
 
@@ -38,7 +38,6 @@ const routes : Routes = [
     AppComponent,
     ImagesComponent,
     HeaderComponent,
-    ImagesListComponent,
     ImageComponent,
     ImagesAddComponent,
     ImagesEditComponent,
@@ -56,7 +55,7 @@ const routes : Routes = [
       RouterModule.forRoot(routes)
   ],
     exports:[ RouterModule ],
-  providers: [],
+  providers: [ImagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
